@@ -24,4 +24,14 @@ button {
 button.delete {
   background: #fff;
   color: red;
- }
+
+}
+button.edit{
+  background: #fff;
+  color: blue;
+}
+button.update{
+  background: #fff;
+  color: green;
+}
+
