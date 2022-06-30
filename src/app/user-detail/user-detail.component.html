@@ -1,35 +1,37 @@
-{{user | json}}
-
-<form action="" class="userForm">
+<!-- {{user | json}} -->
+<form action="" class="userForm" #f="ngForm">
+    <!-- {{ f.form.value | json }} -->
     <div class="form-group">
-        <label for="name">First Name</label>
-        <input type="text" name="name" id="name">
+        <input type="hidden" name="id" [(ngModel)]="user.id">
+        <label for=" name">First Name</label>
+        <input [(ngModel)]="user.name" type="text" name="name" id="name">
     </div>
     <div class="form-group">
         <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" id="lastname">
+        <input [(ngModel)]="user.lastname" type="text" name="lastname" id="lastname">
     </div>
     <div class="form-group">
         <label for="fiscalcode">FiscalCode</label>
-        <input type="text" name="fiscalcode" id="fiscalcode">
+        <input [(ngModel)]="user.fiscalcode" type="text" name="fiscalcode" id="fiscalcode">
     </div>
     <div class="form-group">
         <label for="phone">Phone</label>
-        <input type="text" name="phone" id="phone">
+        <input [(ngModel)]="user.phone" type="text" name="phone" id="phone">
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input [(ngModel)]="user.email" type="email" name="email" id="email">
     </div>
     <div class="form-group">
         <label for="province">Province</label>
-        <input type="text" name="province" id="province">
+        <input [(ngModel)]="user.province" type="text" name="province" id="province">
     </div>
     <div class="form-group">
         <label for="age">Age</label>
-        <input type="number" name="age" id="age">
+        <input [(ngModel)]="user.age" type="number" name="age" id="age">
     </div>
     <div class="form-group form-footer">
-        <button class="btn-save">Save</button>
+        <button class="reset" (click)="resetForm()">Reset</button>
+        <button class="btn-save" (click)="saveUser()">Save</button>
     </div>
 </form>
